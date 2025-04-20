@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Facebook Token Grabber</title>
+</head>
+<body>
+  <h2>Facebook Login Successful</h2>
+  <p id="token">Loading token...</p>
+  <script>
+    const fragment = window.location.hash.substr(1);
+    const params = new URLSearchParams(fragment);
+    document.getElementById('token').textContent = "Access Token: " + params.get("access_token");
+    console.log("Access Token:", params.get("access_token"));
+  </script>
+</body>
+</html>
